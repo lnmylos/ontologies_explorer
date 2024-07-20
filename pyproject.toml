@@ -88,4 +88,5 @@ docstring-code-line-length = "dynamic"
 addopts = "-v --cov --cov-report=term --cov-report=xml"
 
 [tool.coverage.run]
+source = ["utils"]
 omit = ["*/.vscode/extensions/*", "tests/*"]
