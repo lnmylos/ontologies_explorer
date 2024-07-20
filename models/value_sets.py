@@ -1,13 +1,10 @@
-"""Models for the SMT FHIR resources"""
-from __future__ import annotations
-
-from typing import List
+"""Models for the SMT FHIR resources."""
 
 from pydantic import BaseModel
 
 
 class TagItem(BaseModel):
-    """The tag item class"""
+    """The tag item class."""
 
     system: str
     code: str
@@ -15,21 +12,21 @@ class TagItem(BaseModel):
 
 
 class Meta(BaseModel):
-    """The meta class"""
+    """The meta class."""
 
     lastUpdated: str
-    tag: List[TagItem]
+    tag: list[TagItem]
 
 
 class LinkItem(BaseModel):
-    """The link item class"""
+    """The link item class."""
 
     relation: str
     url: str
 
 
 class TagItem1(BaseModel):
-    """The entry tag item class"""
+    """The entry tag item class."""
 
     system: str
     code: str
@@ -37,29 +34,29 @@ class TagItem1(BaseModel):
 
 
 class Meta1(BaseModel):
-    """The entry meta item class"""
+    """The entry meta item class."""
 
     versionId: str
     lastUpdated: str
-    profile: List[str]
-    tag: List[TagItem1]
+    profile: list[str]
+    tag: list[TagItem1]
 
 
 class IdentifierItem(BaseModel):
-    """The identifier item class"""
+    """The identifier item class."""
 
     system: str
     value: str
 
 
 class Resource(BaseModel):
-    """The resource class"""
+    """The resource class."""
 
     resourceType: str
     id: str
     meta: Meta1
     url: str
-    identifier: List[IdentifierItem]
+    identifier: list[IdentifierItem]
     version: str
     name: str
     status: str
@@ -69,19 +66,19 @@ class Resource(BaseModel):
 
 
 class EntryItem(BaseModel):
-    """The entry item class"""
+    """The entry item class."""
 
     fullUrl: str
     resource: Resource
 
 
 class Model(BaseModel):
-    """The Bundle (Model) class"""
+    """The Bundle (Model) class."""
 
     resourceType: str
     id: str
     meta: Meta
     type: str
     total: int
-    link: List[LinkItem]
-    entry: List[EntryItem]
+    link: list[LinkItem]
+    entry: list[EntryItem]

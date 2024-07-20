@@ -1,10 +1,10 @@
-"""temp main"""
+"""temp main."""
 
 from utils.token import get_access_token
 
 
-def main():
-    """main function"""
+def main() -> None:
+    """Is main function."""
     get_access_token("test@email.com", "test")
 
 
